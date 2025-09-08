@@ -1,0 +1,201 @@
+/* Importation des polices */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* Normalisation */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style title */
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Création d'un conteneur */
+.container {
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto;
+  display: grid;
+  place-items: center;
+}
+
+/* Partie Annimation */
+.card-inner {
+  color: rgb(255, 255, 255);
+  width: 35vw;
+  height: 40vh;
+  margin: 10%;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card {
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-inner:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Partie Design Front */
+.card-front {
+  position: fixed;
+  font-size: 2rem;
+  width: 45%;
+  left: 2rem;
+  top: 5rem;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#logo {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+} 
+
+
+/* Partie Design Back */
+#icons {
+  width: 2vw;
+  height: 5vh;
+}
+
+.card-icons {
+  gap: 5%;
+}
+
+.card-back {
+  background-image: url('../img/background-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  transform: rotateY(180deg);
+  padding: 3vh 3vw;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  gap: 10%;
+  padding-top: 5vh;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.container-card-back {
+  display: flex;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+/* Partie Responsive */
+@media screen and (max-width: 1640px) {
+  .right-content {
+    font-size: 1.3rem;
+    padding-top: 3vh;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .card-front {
+    left: 1rem;
+    top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .right-content {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .right-content {
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-inner {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .card-front {
+    width: 45%;
+    left: 2rem;
+    top: 10rem;
+  }
+
+  #icons {
+    width: 5vw;
+    height: 8vh;
+  }
+  
+  .container-card-back {
+    display: flex;
+  }
+
+  .left-content {
+    padding-top: 20vh;
+  }
+  
+  .right-content {
+    padding-top: 17vh;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .left-content {
+    width: 100%;
+    padding-top: 2.5vh;
+  }
+
+  #icons {
+    width: 100%;
+    height: 100%;
+  }
+
+  .right-content {
+    display: none;
+  }
+}
